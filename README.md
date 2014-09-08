@@ -5,13 +5,12 @@
 ## Instructions
 
   1. Set environment varaiables and secrets:
-      You'll need the following:
+      * You'll need the following:
         * GOOGLE_API_KEY (secret api key)
         * GOOGLE_API_SECRET (client secret)
         * GOOGLE_API_CLIENT_ID (client id)
-        * GOOGLE_API_CALLBACK_URL ( callback url for OAUTH)
+        * GOOGLE_API_CALLBACK_URL ( callback url for OAUTH ) ***MUST BE /authenticate/callback
 
-  2. ```
-    npm start
+  2. `npm start`
 
-    ```
+
