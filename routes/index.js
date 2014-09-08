@@ -15,4 +15,6 @@ router.get('/authenticate/callback', controllers.accessTokenController);
 
 router.get('/calendars', controllers.calendarListController);
 
+router.get('/calendars/:calendarID/events', controllers.eventController);
+
 module.exports = router;

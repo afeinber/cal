@@ -6,6 +6,7 @@ var calendarList = {"kind":"calendar#calendarList","etag":"\"1410060765522000\""
 var expect = require('Chai').expect;
 var Q = require('q');
 var request = Q.denodeify(require('request'));
+var serializers = require('../lib/services/serializers');
 //stub the request.get method in google.
 var google = proxyquire('../lib/services/google', {
   'request': {
@@ -29,7 +30,8 @@ describe('getting calendar list', function () {
 
     request('http://localhost:8000/calendars?accessToken=' + accessToken, function(err, response, body) {
       //can only compare strings, not objects
-      expect(response.body).to.equal(JSON.stringify(google.formatCalendarList(JSON.stringify(calendarList))));
+      //if you find an error here make sure you're running the test by itself
+      expect(response.body).to.equal(JSON.stringify(serializers.formatEventList(JSON.stringify(calendarList))));
     });
     done();
   });
