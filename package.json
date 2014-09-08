@@ -16,6 +16,9 @@
     "less-middleware": "1.0.x",
     "mocha": "*",
     "chai": "*",
-    "request": "*"
+    "request": "*",
+    "sinon": "*",
+    "q": "*",
+    "proxyquire": "*"
   }
 }
